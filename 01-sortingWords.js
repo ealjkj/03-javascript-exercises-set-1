@@ -1,10 +1,9 @@
-
-
+'use-strict';
 function countConsonants(word) {
     const consonants = 'bcdfghjklmnpqrstvwxyz';
     let counter = 0;
-    for(let letter of word) {
-        if(consonants.includes(letter.toLowerCase())) counter++
+    for(let letter of word.toLowerCase()) {
+        if(consonants.includes(letter)) counter++
     }
     return counter;
 }
@@ -18,7 +17,7 @@ function sortWords(arr, custom) {
     else if(custom === 'consonants-asc') compare = (x,y) => countConsonants(x) < countConsonants(y);
     else if(custom === 'consonants-desc') compare = (x,y) => countConsonants(x) > countConsonants(y);
 
-    sorted = []
+    let sorted = []
     for(let a of arr){
         let foundPos = false;
         for(let i = 0; i < sorted.length; i++) {

@@ -1,3 +1,4 @@
+'use-strict';
 function copyProp(obj1, obj2, arrOfProps) {
     if(arrOfProps === undefined){
         for(let p in obj2) {
@@ -10,14 +11,14 @@ function copyProp(obj1, obj2, arrOfProps) {
     } 
 }
 
-objA =  {
+const objA =  {
     height: 10,
     width: 12,
     name: 'Raul',
     color: 'red'
 }
 
-objB = {
+const objB = {
     width: 800,
     look: 'cool',
     major: 'no',
