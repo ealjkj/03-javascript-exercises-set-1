@@ -2,7 +2,7 @@ function limitFunc(fn, num) {
     let counter = 0;
     return (...args) => {
         counter++;
-        if (counter <= num) return fn(args);
+        if (counter <= num) return fn(...args);
     }
 }
 
@@ -11,8 +11,8 @@ function myFn(name) {
     return 'hola';
 }
 
-const limited = limitFunc(myFn, 2);
+const limited = limitFunc((a,b)=> a+b, 2);
 
-console.log(limited('jorge'));
-console.log(limited('jorge'));
-console.log(limited('jorge'));
+console.log(limited(3, 4));
+console.log(limited(9, 2));
+console.log(limited(11, 20));
